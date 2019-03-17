@@ -1,0 +1,16 @@
+@import './animations.scss';
+
+.slide-prev {
+  z-index: 0;
+  opacity: 0;
+}
+
+.slide-curr {
+  z-index: 1;
+  opacity: 1;
+}
+
+.slide-next {
+  z-index: 0;
+  opacity: 0;
+}
