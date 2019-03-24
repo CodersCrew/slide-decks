@@ -1,23 +1,20 @@
 import styles from './styles';
-import TitleSlide from './slides/TitleSlide';
-import BigQuestion from './slides/BigQuestion';
+import scripts from './scripts';
+import slides from './slides';
 
 export default {
-  styles,
-  defaults: {
+  globals: {
     width: 1920,
     height: 1080,
   },
-  slides: {
-    title: TitleSlide,
-    bigQuestion: BigQuestion,
-  },
+  styles,
+  scripts,
   head: [
     {
       key: '1',
       tag: 'link',
       attr: {
-        href: 'https://fonts.googleapis.com/css?family=Montserrat:700|Raleway:400,700&amp;subset=latin-ext',
+        href: 'https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700|Open+Sans:400,700&amp;subset=latin-ext',
         rel: 'stylesheet',
       },
     },
@@ -27,4 +24,5 @@ export default {
       content: 'My Next.js presentation',
     },
   ],
+  slides,
 };

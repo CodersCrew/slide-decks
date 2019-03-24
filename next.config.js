@@ -6,9 +6,9 @@ const withSass = require('@zeit/next-sass');
 
 module.exports = withCSS(
   withSass({
+    assetPrefix: process.env.NODE_ENV === 'production' ? '/react-slide-decks' : '',
     webpack(config, { defaultLoaders }) {
       defaultLoaders.babel.options = {
-        presets: ['@zeit/next-typescript/babel'],
         plugins: [
           [
             'babel-plugin-styled-components',

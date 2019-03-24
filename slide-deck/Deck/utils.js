@@ -13,14 +13,14 @@ export const checkForStateChange = (currState, nextState) => {
 
 export const checkForNewAnimation = (prevState, currState, callback) => {
   if (!prevState.animaiton && currState.animation) {
-    window.setTimeout(callback, 600);
+    window.setTimeout(callback, 1200);
   }
 };
 
 export const addKeysToSlides = slides => slides.map((slide, i) => ({ ...slide, key: i }));
 
 export const getScale = ({ currentTarget: { innerWidth, innerHeight } }, template) => {
-  const { width, height } = template.defaults;
+  const { width, height } = template.globals;
   const scaleX = innerWidth / width;
   const scaleY = innerHeight / height;
   return Math.min(scaleX, scaleY);

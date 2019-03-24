@@ -131,6 +131,10 @@ const GlobalStyle = createGlobalStyle`
     border-spacing: 0;
   }
 
+  div {
+    box-sizing: border-box;
+  }
+
   #__next {
     background-color: var(--global-background);
     max-width: 100vw;

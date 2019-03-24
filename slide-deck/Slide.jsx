@@ -12,7 +12,8 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  animation-duration: 600ms;
+  animation-duration: 1000ms;
+  background-color: var(--slide-background);
 
   > div {
     width: 100%;
@@ -41,6 +42,7 @@ class Slide extends Component {
       { [`direction-${animationDiretions}`]: animationDiretions },
     );
     const Component = template[data.template];
+    console.log('Slide render');
 
     return (
       <Container type={type} className={className}>

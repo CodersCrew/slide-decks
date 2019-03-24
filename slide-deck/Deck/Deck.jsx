@@ -38,6 +38,10 @@ class Deck extends Component {
     window.addEventListener('keydown', this.handleArrowPress);
     window.addEventListener('resize', this.handleScaleChange);
 
+    if (this.template.scripts.onInit) {
+      this.template.scripts.onInit(this);
+    }
+
     this.handleScaleChange({ currentTarget: window });
   }
 
@@ -53,6 +57,10 @@ class Deck extends Component {
   componentWillUnmount() {
     window.removeEventListener('keydown', this.handleArrowPress);
     window.removeEventListener('resize', this.handleScaleChange);
+
+    if (this.template.scripts.onDestroy) {
+      this.template.scripts.onDestroy(this);
+    }
   }
 
   handleScaleChange = e => this.setState({ scale: getScale(e, this.template) });
@@ -79,7 +87,7 @@ class Deck extends Component {
 
   render() {
     const { scale } = this.state;
-    const { width, height } = this.template.defaults;
+    const { width, height } = this.template.globals;
 
     return (
       <>
@@ -107,7 +115,7 @@ Deck.propTypes = {
     ),
   }),
   template: shape({
-    defaults: exact({
+    globals: exact({
       width: number,
       height: number,
     }),
