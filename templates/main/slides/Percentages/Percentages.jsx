@@ -22,7 +22,7 @@ const Projects = ({ title, content, items, styles }) => (
     <BoxHeading align="center" title={title} content={content}>
       <Items className="items">
         {items.map(item => (
-          <Item key={item.image} {...item} />
+          <Item key={item.value} {...item} />
         ))}
       </Items>
     </BoxHeading>

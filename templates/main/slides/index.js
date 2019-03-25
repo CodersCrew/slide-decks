@@ -10,6 +10,8 @@ import Projects from './Projects';
 import Logos from './Logos';
 import Card from './Card';
 import Percentages from './Percentages';
+import Code from './Code';
+import CodeSandbox from './CodeSandbox';
 
 export default {
   Title,
@@ -24,4 +26,6 @@ export default {
   Logos,
   Card,
   Percentages,
+  Code,
+  CodeSandbox,
 };

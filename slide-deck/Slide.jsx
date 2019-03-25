@@ -21,36 +21,24 @@ const Container = styled.div`
   }
 `;
 
-class Slide extends Component {
-  constructor(props) {
-    super(props);
-    console.log('Created', props.data.key);
-  }
+const Slide = props => {
+  const { type, animation, template, data } = props;
+  const animationType = animation && animation.type;
+  const animationDiretions = animation && animation.direction;
+  const className = classnames(
+    `slide-${type}`,
+    { animated: !!animation },
+    { [`animation-${animationType}`]: animationType },
+    { [`direction-${animationDiretions}`]: animationDiretions },
+  );
+  const Component = template[data.template];
 
-  componentWillUnmount() {
-    console.log('Unmounted', this.props.data.key);
-  }
-
-  render() {
-    const { type, animation, template, data } = this.props;
-    const animationType = animation && animation.type;
-    const animationDiretions = animation && animation.direction;
-    const className = classnames(
-      `slide-${type}`,
-      { animated: !!animation },
-      { [`animation-${animationType}`]: animationType },
-      { [`direction-${animationDiretions}`]: animationDiretions },
-    );
-    const Component = template[data.template];
-    console.log('Slide render');
-
-    return (
-      <Container type={type} className={className}>
-        <Component {...data.content} />
-      </Container>
-    );
-  }
-}
+  return (
+    <Container type={type} className={className}>
+      <Component {...data.content} />
+    </Container>
+  );
+};
 
 Slide.propTypes = {
   animation: exact({

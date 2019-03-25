@@ -6,6 +6,18 @@ const timelineNoContent = css`
   }
 `;
 
+const code = `
+const Code = ({ title, content, code, styles }) => (
+  <Container styles={styles} className="code">
+    <BoxHeading align="center" title={title} content={content}>
+      <CodeHighlighter language="javascript" style={atomDark}>
+        {code}
+      </CodeHighlighter>
+    </BoxHeading>
+  </Container>
+);
+`;
+
 export default {
   slides: [
     {
@@ -419,6 +431,31 @@ export default {
             content: 'Vivamus ac risus eget orci mollis sodales. Etiam semper orci id tellus dignissim pretium.',
           },
         ],
+      },
+    },
+    {
+      template: 'Code',
+      animation: {
+        type: 'horizontal',
+      },
+      content: {
+        title: 'Slide title',
+        content:
+          'Maecenas vulputate ac elit vel blandit. Morbi vulputate elit purus, vitae mattis urna tristique quis. Morbi ac cursus justo.',
+        code,
+        language: 'jsx',
+        stylesObj: {
+          fontSize: 40,
+        },
+      },
+    },
+    {
+      template: 'CodeSandbox',
+      animation: {
+        type: 'horizontal',
+      },
+      content: {
+        sandboxId: 'mzq0jz1ryp',
       },
     },
   ],
