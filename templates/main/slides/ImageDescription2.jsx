@@ -1,16 +1,22 @@
 import styled from 'styled-components';
 import { string, arrayOf } from 'prop-types';
 import { renderContent } from '../utils';
-import { BoxHeader } from '../components';
+import { LineHeader } from '../components';
 
 const Container = styled.div`
   display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: left;
   width: 100%;
   height: 100%;
-  padding: 80px;
+  padding: 40px 80px 181px 80px;
   ${props => props.styles}
+`;
+
+const Header = styled.div`
+  margin-bottom: 80px;
 `;
 
 const Middle = styled.div`
@@ -35,7 +41,9 @@ const Content = styled.div`
 
 const ImageDescription2 = ({ title, image, content, styles }) => (
   <Container styles={styles} className="image-description2">
-    <BoxHeader>{title}</BoxHeader>
+    <Header>
+      <LineHeader>{title}</LineHeader>
+    </Header>
     <Middle className="middle">
       <Image src={image} className="image" />
       <Content className="content">{renderContent(content)}</Content>
