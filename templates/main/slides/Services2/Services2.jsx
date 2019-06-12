@@ -22,7 +22,7 @@ const Items = styled.div`
 
 const Services2 = ({ title, content, items, styles }) => (
   <Container styles={styles} className="services2">
-    <LineHeader align="center">{title}</LineHeader>
+    <LineHeader alignSelf="center">{title}</LineHeader>
     <BoxHeading align="center" content={content}>
       <Items className="items">
         {items.map(item => (

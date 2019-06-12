@@ -20,7 +20,7 @@ const Items = styled.div`
 
 const Logos = ({ title, content, items, styles }) => (
   <Container styles={styles} className="services2">
-    <LineHeader>{title}</LineHeader>
+    <LineHeader alignSelf="center">{title}</LineHeader>
     <BoxHeading align="center" content={content}>
       <Items className="items">
         {items.map(item => (

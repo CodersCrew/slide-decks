@@ -22,7 +22,7 @@ const Content = styled.div`
 
 const Code = ({ title, content, code, styles, language, stylesObj }) => (
   <Container styles={styles} className="code">
-    <LineHeader align="center">{title}</LineHeader>
+    <LineHeader alignSelf="center">{title}</LineHeader>
     <BoxHeading  align="center" content={content}>
       <Content>
         <Prism language={language} style={atomDark} customStyle={{ background: 'var(--black)', ...stylesObj }}>
