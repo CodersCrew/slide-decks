@@ -9,8 +9,8 @@ const Container = styled.div`
   height: 100%:
 `;
 
-const SocialMedia = ({ items, styles }) => (
-  <Container styles={styles}>
+const SocialMedia = ({ items }) => (
+  <Container>
     <div className="Items">
       {items.map(item => (
         <Item key={item.image} {...item} />
@@ -28,7 +28,6 @@ SocialMedia.propTypes = {
       content: string,
     }),
   ),
-  styles: arrayOf(string),
 };
 
 export default SocialMedia;
