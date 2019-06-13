@@ -458,5 +458,33 @@ export default {
         sandboxId: 'mzq0jz1ryp',
       },
     },
+    {
+      template: 'SocialMedia',
+      animation: {
+        type: 'horizontal',
+      },
+      content: {
+        items: [
+          {
+            image: '/static/icons/light/social_media_one.svg',
+            line: '/static/icons/light/top_line.svg',
+            title: 'Item name',
+            content: 'Vivamus ac risus eget orci mollis sodales. Etiam semper orci id tellus dignissim pretium.',
+          },
+          {
+            image: '/static/icons/light/social_media_two.svg',
+            line: '/static/icons/light/medium_line.svg',
+            title: 'Item 2',
+            content: 'Vivamus ac risus eget orci mollis sodales. Etiam semper orci id tellus dignissim pretium.',
+          },
+          {
+            image: '/static/icons/light/social_media_three.svg',
+            line: '/static/icons/light/bottom_line.svg',
+            title: 'Item 3',
+            content: 'Vivamus ac risus eget orci mollis sodales. Etiam semper orci id tellus dignissim pretium.',
+          },
+        ],
+      },
+    },
   ],
 };
