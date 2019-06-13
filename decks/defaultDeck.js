@@ -458,5 +458,46 @@ export default {
         sandboxId: 'mzq0jz1ryp',
       },
     },
+    {
+      template: 'Funnel',
+      animation: {
+        type: 'horizontal',
+      },
+      content: {
+        title: 'Slide title',
+        items: [
+          {
+            image: '/static/icons/light/funnel_piece_one.svg',
+            name: 'item name 1',
+            content: 'Vivamus ac risus eget orci mollis sodales.',
+          },
+          {
+            image: '/static/icons/light/funnel_piece_two.svg',
+            name: 'item name 2',
+            content: 'Vivamus ac risus eget orci mollis sodales.',
+          },
+          {
+            image: '/static/icons/light/funnel_piece_three.svg',
+            name: 'item name 3',
+            content: 'Vivamus ac risus eget orci mollis sodales.',
+          },
+          {
+            image: '/static/icons/light/funnel_piece_four.svg',
+            name: 'item name 4',
+            content: 'Vivamus ac risus eget orci mollis sodales.',
+          },
+          {
+            image: '/static/icons/light/funnel_piece_five.svg',
+            name: 'item name 5',
+            content: 'Vivamus ac risus eget orci mollis sodales.',
+          },
+          {
+            image: '/static/icons/light/funnel_piece_six.svg',
+            name: 'item name 6',
+            content: 'Vivamus ac risus eget orci mollis sodales.',
+          },
+        ],
+      },
+    },
   ],
 };
