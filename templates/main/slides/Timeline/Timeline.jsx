@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 import { string, arrayOf, exact, bool } from 'prop-types';
-import { BoxHeading } from '../../components';
+import { BoxHeading, LineHeader } from '../../components';
 import Item from './Item';
 
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  padding: 80px 0;
+  padding-top: ${props => (props.first ? '40px' : '104px')};
   ${props => props.styles}
+`;
+
+const Header = styled.div`
+  margin-left: 64px;
 `;
 
 const Items = styled.div`
@@ -18,8 +22,11 @@ const Items = styled.div`
 `;
 
 const Timeline = ({ styles, title, content, first, last, items }) => (
-  <Container styles={styles} className="timeline">
-    <BoxHeading title={title} content={content} withPadding>
+  <Container styles={styles} className="timeline" first={first}>
+    <Header>
+      <LineHeader>{title}</LineHeader>
+    </Header>
+    <BoxHeading content={content} withPadding>
       <Items first={first} last={last} className="items">
         {items.map((item, i) => {
           const isFirst = first && i === 0;
