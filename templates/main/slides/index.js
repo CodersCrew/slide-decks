@@ -12,6 +12,7 @@ import Card from './Card';
 import Percentages from './Percentages';
 import Code from './Code';
 import CodeSandbox from './CodeSandbox';
+import Funnel from './Funnel';
 
 export default {
   Title,
@@ -28,4 +29,5 @@ export default {
   Percentages,
   Code,
   CodeSandbox,
+  Funnel,
 };

@@ -3,10 +3,14 @@ import { string, arrayOf, exact } from 'prop-types';
 import { LineHeader } from '../../components';
 import Item from './Item';
 
-const Container = styled.div``;
-const Items = styled.div``;
+const Container = styled.div`
+  padding: 40px 64px 101px 64px;
+`;
+const Items = styled.div`
+  margin-top: 48px;
+`;
 
-const Funnel = ({ title, items, content, name, image }) => (
+const Funnel = ({ title, items }) => (
   <Container>
     <LineHeader>{title}</LineHeader>
     <Items>

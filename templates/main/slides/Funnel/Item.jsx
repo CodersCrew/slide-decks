@@ -1,24 +1,50 @@
 import styled from 'styled-components';
 import { string } from 'prop-types';
 
-const Container = styled.div``;
-const Title = styled.h1``;
-const Line = styled.div``;
-const Name = styled.div``;
-const Content = styled.div``;
+const Container = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 32px;
 
-const Item = ({ title, image, name, content }) => (
+  p {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex: 1;
+    color: var(--grey-dark);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+`;
+
+const Line = styled.div`
+  position: relative;
+  margin-right: 64px;
+  text-align: right;
+  flex: 1;
+
+  p {
+    position: absolute;
+    top: calc(50% - 60px / 2);
+    right: 40px;
+    color: var(--white);
+    font-weight: var(--bold);
+  }
+`;
+
+const Item = ({ image, name, content }) => (
   <Container>
-    <Title>{title}</Title>
-    <Line src={image}>
-      <Name>{name}</Name>
+    <Line>
+      <img src={image} alt="" />
+      <p>{name}</p>
     </Line>
-    <Content>{content}</Content>
+    <p>{content}</p>
   </Container>
 );
 
 Item.propTypes = {
-  title: string,
   image: string,
   name: string,
   content: string,
