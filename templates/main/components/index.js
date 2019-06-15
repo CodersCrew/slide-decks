@@ -3,3 +3,4 @@ export BoxHeader from './BoxHeader';
 export BoxHeading from './BoxHeading';
 export Icon from './Icon';
 export CircularPercent from './CircularPercent';
+export ChangeButton from './ChangeButton';

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { string, arrayOf } from 'prop-types';
+import { ChangeButton } from '../components';
 
 const Container = styled.div`
   display: flex;
@@ -35,6 +36,7 @@ const SubHeader = styled.h3`
 
 const Title = ({ image, title, subtitle, styles }) => (
   <Container styles={styles} className="title">
+    <ChangeButton />
     <Middle className="middle">
       {image && <Image src={image} className="image" />}
       <Header className="title">{title}</Header>
