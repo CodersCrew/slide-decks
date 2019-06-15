@@ -13,6 +13,7 @@ import Percentages from './Percentages';
 import Code from './Code';
 import CodeSandbox from './CodeSandbox';
 import SocialMedia from './SocialMedia';
+import Funnel from './Funnel';
 
 export default {
   Title,
@@ -30,4 +31,5 @@ export default {
   Code,
   CodeSandbox,
   SocialMedia,
+  Funnel,
 };
