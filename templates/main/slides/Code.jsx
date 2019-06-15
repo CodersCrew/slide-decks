@@ -2,12 +2,13 @@ import styled from 'styled-components';
 import { string, arrayOf, object } from 'prop-types';
 import { Prism } from 'react-syntax-highlighter';
 import { atomDark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
-import { BoxHeading } from '../components';
+import { BoxHeading, LineHeader } from '../components';
 
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  padding: 80px;
+  padding: 40px 80px 177px 80px;
+  text-align: center;
   ${props => props.styles}
 `;
 
@@ -21,7 +22,8 @@ const Content = styled.div`
 
 const Code = ({ title, content, code, styles, language, stylesObj }) => (
   <Container styles={styles} className="code">
-    <BoxHeading align="center" title={title} content={content}>
+    <LineHeader alignSelf="center">{title}</LineHeader>
+    <BoxHeading  align="center" content={content}>
       <Content>
         <Prism language={language} style={atomDark} customStyle={{ background: 'var(--black)', ...stylesObj }}>
           {code.trim()}

@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 import { string, arrayOf, exact } from 'prop-types';
-import { BoxHeading } from '../../components';
+import { BoxHeading, LineHeader } from '../../components';
 import Item from './Item';
 
 const Container = styled.div`
   width: 100%;
   height: 100%;
-  padding: 80px;
+  padding: 40px 80px 111px 64px;
   ${props => props.styles}
 `;
 
@@ -20,7 +20,8 @@ const Items = styled.div`
 
 const NumberItems = ({ styles, title, content, items }) => (
   <Container styles={styles} className="number-items">
-    <BoxHeading title={title} content={content}>
+    <LineHeader>{title}</LineHeader>
+    <BoxHeading content={content}>
       <Items className="items">
         {items.map(item => (
           <Item key={item.number} {...item} />
