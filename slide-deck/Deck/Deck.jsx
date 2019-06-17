@@ -5,6 +5,7 @@ import GlobalStyle from '../GlobalStyle';
 import Slide from '../Slide';
 import { nextSlide, prevSlide, handleArrowPress } from './slides-methods';
 import { renderHead } from './renderers';
+import { Panel } from '../../templates/main/components';
 import { updateURL, checkForStateChange, checkForNewAnimation, addKeysToSlides, getScale } from './utils';
 import { Container } from './styles';
 
@@ -31,7 +32,6 @@ class Deck extends Component {
 
     this.nextSlide = nextSlide.bind(this);
     this.prevSlide = prevSlide.bind(this);
-    this.handleArrowPress = handleArrowPress.bind(this);
   }
 
   componentDidMount() {
@@ -91,6 +91,12 @@ class Deck extends Component {
 
     return (
       <>
+        <Panel 
+          actualSlide={this.state.slideIndex} 
+          slides={this.slidesCount} 
+          prevSlide={this.prevSlide}
+          nextSlide={this.nextSlide}
+        />
         {this.head}
         <GlobalStyle templateStyle={this.template.styles} />
         <Container width={width} height={height} scale={scale}>
