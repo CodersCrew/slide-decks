@@ -486,5 +486,46 @@ export default {
         ],
       },
     },
+    {
+      template: 'Funnel',
+      animation: {
+        type: 'horizontal',
+      },
+      content: {
+        title: 'Slide title',
+        items: [
+          {
+            image: '/static/icons/light/funnel_piece_one.svg',
+            name: 'Item name 1',
+            content: 'Vivamus ac risus eget orci mollis sodales.',
+          },
+          {
+            image: '/static/icons/light/funnel_piece_two.svg',
+            name: 'Item name 2',
+            content: 'Vivamus ac risus eget orci mollis sodales.',
+          },
+          {
+            image: '/static/icons/light/funnel_piece_three.svg',
+            name: 'Item name 3',
+            content: 'Vivamus ac risus eget orci mollis sodales.',
+          },
+          {
+            image: '/static/icons/light/funnel_piece_four.svg',
+            name: 'Item name 4',
+            content: 'Vivamus ac risus eget orci mollis sodales.',
+          },
+          {
+            image: '/static/icons/light/funnel_piece_five.svg',
+            name: 'Item name 5',
+            content: 'Vivamus ac risus eget orci mollis sodales.',
+          },
+          {
+            image: '/static/icons/light/funnel_piece_six.svg',
+            name: 'Item name 6',
+            content: 'Vivamus ac risus eget orci mollis sodales.',
+          },
+        ],
+      },
+    },
   ],
 };
