@@ -23,6 +23,14 @@ class Deck extends Component {
       slideIndex: Number(router.query.slide) || 0,
       scale: 0,
       animation: null,
+      theme: {
+        slideBackground: false,
+        globalBackground: false,
+        textPrimary: false,
+        textSecondary: false,
+        textRegular: false,
+        textPlaceholder: false
+      }
     };
 
     this.slides = addKeysToSlides(config.slides);
@@ -32,6 +40,16 @@ class Deck extends Component {
 
     this.nextSlide = nextSlide.bind(this);
     this.prevSlide = prevSlide.bind(this);
+    this.handleArrowPress = handleArrowPress.bind(this);
+  }
+
+  changeTheme = () => {
+    if(this.state.theme.slideBackground === false){
+      this.setState({ theme: { slideBackground: true, globalBackground: true, textPrimary: true, textSecondary: true, textRegular: true, textPlaceholder: true }});
+    }
+    else if(this.state.theme.slideBackground === true){
+      this.setState({ theme: { slideBackground: false, globalBackground: false, textPrimary: false, textSecondary: false, textRegular: false, textPlaceholder: false }});
+    }
   }
 
   componentDidMount() {
@@ -96,9 +114,10 @@ class Deck extends Component {
           slides={this.slidesCount} 
           prevSlide={this.prevSlide}
           nextSlide={this.nextSlide}
+          newTheme={this.changeTheme}
         />
         {this.head}
-        <GlobalStyle templateStyle={this.template.styles} />
+        <GlobalStyle templateStyle={this.template.styles} {...this.state.theme} />
         <Container width={width} height={height} scale={scale}>
           {this.slides.map(this.renderSlide)}
         </Container>

@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import onInit from '../scripts';
 
 const Container = styled.div`
     position: absolute;
@@ -21,8 +20,6 @@ const ThemeButton = styled.button`
     border-bottom-right-radius: 30px;
 `;
 
-const Buttons = styled.div``;
-
 const Left = styled.button`
     width: 50px;
     height: 40px;
@@ -30,23 +27,25 @@ const Left = styled.button`
     border-top-left-radius: 30px;
 `;
 
-const Right = styled(Left)`
+const Right = styled.button`
     border-top-left-radius: 0;
+    width: 50px;
+    height: 40px;
+    text-align: center;
     border-top-right-radius: 30px;
 `;
 
-
-const Panel = ({ actualSlide, slides, prevSlide, nextSlide }) => (
-    <Container className="container">
+const Panel = ({ actualSlide, slides, prevSlide, nextSlide, newTheme }) => {
+    return (<Container className="container">
         <SlideNumber>
             <p> {actualSlide}/{slides - 1} </p>
         </SlideNumber>
-        <Buttons>
+        <div className="buttons">
             <Left id="left" onClick={prevSlide}> L </Left>
             <Right id="right" onClick={nextSlide}> R </Right>
-        </Buttons>
-        <ThemeButton onClick={() => onInit}> Light </ThemeButton>
-    </Container>
-);
+        </div>
+        <ThemeButton id="themebtn" onClick={newTheme}> Light </ThemeButton>
+    </Container>);
+};
 
 export default Panel;

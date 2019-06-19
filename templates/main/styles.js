@@ -25,15 +25,15 @@ export default css`
     --white: #fff;
 
     --primary: var(--blue);
-    --text-primary: var(--black);
-    --text-secondary: var(--grey);
-    --text-regular: var(--grey-dark);
-    --text-placeholder: var(--grey-light);
+    --text-primary: ${props => props.textPrimary? `var(--white)` : `var(--black)`};
+    --text-secondary: ${props => props.textSecondary? `var(--white)` : `var(--grey)`};
+    --text-regular: ${props => props.textRegular? `var(--white)` : `var(--grey-dark)`};
+    --text-placeholder: ${props => props.textPlaceholder? `var(--white)` : `var(--grey-light)`};
 
     ${'' /* Defaults */}
 
-    --slide-background: var(--white);
-    --global-background: var(--black);
+    --slide-background: ${props => props.slideBackground? `var(--black)` : `var(--white)`};
+    --global-background: ${props => props.globalBackground? `var(--grey-darker)` : `var(--black)`};
 
     ${'' /* Fonts */}
 
