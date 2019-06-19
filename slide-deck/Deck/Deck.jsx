@@ -24,7 +24,7 @@ class Deck extends Component {
       slideIndex: Number(router.query.slide) || 0,
       scale: 0,
       animation: null,
-      percentage: 0,
+      percentage: Number(router.query.slide)/17*100,
     };
 
     this.slides = addKeysToSlides(config.slides);
@@ -94,8 +94,10 @@ class Deck extends Component {
   };
 
   render() {
-    const { scale } = this.state;
+    const { scale, percentage } = this.state;
     const { width, height } = this.template.globals;
+
+    console.log(this.state.slideIndex);
 
     return (
       <>
@@ -103,7 +105,7 @@ class Deck extends Component {
         <GlobalStyle templateStyle={this.template.styles} />
         <Container width={width} height={height} scale={scale}>
           {this.slides.map(this.renderSlide)}
-          <ProgressBar percentage={this.state.percentage} />
+          <ProgressBar percentage={percentage} />
         </Container>
       </>
     );

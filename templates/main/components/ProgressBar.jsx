@@ -8,7 +8,7 @@ const Container = styled.div`
     z-index: 10;
 `;
 
-const FillerContainer = styled.div`
+const ProgressLine = styled.div`
     background: var(--blue);
     height: 100%;
     transition: width .2s ease-in;
@@ -17,26 +17,21 @@ const FillerContainer = styled.div`
 export function nextStep({ keyCode }) {
     const { slideIndex } = this.state;
     if(keyCode === 39){
-    this.setState({ percentage: this.state.percentage + ((slideIndex/this.slidesCount)*100) })
+    this.setState({ percentage: this.state.percentage + (1/(this.slidesCount - 1))*100 })
     }
   }
 
 export function prevStep({ keyCode }) {
     const { slideIndex } = this.state;
     if(keyCode === 37){
-    this.setState({ percentage: this.state.percentage - (slideIndex/this.slidesCount) })
+    this.setState({ percentage: this.state.percentage - (1/(this.slidesCount - 1))*100 })
     }
   }
 
 const ProgressBar = ({ percentage }) => (
         <Container className="progress-bar">
-            <Filler percentage={percentage} />
+            <ProgressLine style={{ width: `${percentage}%` }}/>
         </Container>
     );
-
-
-const Filler = ({ percentage }) => (
-    <FillerContainer style={{ width: `${percentage}%` }}/>
-);
 
 export default ProgressBar;
