@@ -5,6 +5,8 @@ import GlobalStyle from '../GlobalStyle';
 import Slide from '../Slide';
 import { nextSlide, prevSlide, handleArrowPress } from './slides-methods';
 import { renderHead } from './renderers';
+import { ProgressBar } from '../../templates/main/components';
+import { nextStep, prevStep } from '../../templates/main/components/ProgressBar';
 import { updateURL, checkForStateChange, checkForNewAnimation, addKeysToSlides, getScale } from './utils';
 import { Container } from './styles';
 
@@ -22,6 +24,7 @@ class Deck extends Component {
       slideIndex: Number(router.query.slide) || 0,
       scale: 0,
       animation: null,
+      percentage: 0,
     };
 
     this.slides = addKeysToSlides(config.slides);
@@ -32,11 +35,16 @@ class Deck extends Component {
     this.nextSlide = nextSlide.bind(this);
     this.prevSlide = prevSlide.bind(this);
     this.handleArrowPress = handleArrowPress.bind(this);
+
+    this.nextStep = nextStep.bind(this);
+    this.prevStep = prevStep.bind(this);
   }
 
   componentDidMount() {
     window.addEventListener('keydown', this.handleArrowPress);
     window.addEventListener('resize', this.handleScaleChange);
+    window.addEventListener('keydown', this.nextStep);
+    window.addEventListener('keydown', this.prevStep);
 
     if (this.template.scripts.onInit) {
       this.template.scripts.onInit(this);
@@ -95,6 +103,7 @@ class Deck extends Component {
         <GlobalStyle templateStyle={this.template.styles} />
         <Container width={width} height={height} scale={scale}>
           {this.slides.map(this.renderSlide)}
+          <ProgressBar percentage={this.state.percentage} />
         </Container>
       </>
     );
