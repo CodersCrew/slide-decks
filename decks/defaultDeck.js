@@ -527,5 +527,34 @@ export default {
         ],
       },
     },
+    {
+      template: 'Pineapple2',
+      animation: {
+        type: 'horizontal',
+      },
+      content: {
+        title: 'Slide title',
+        items: [
+          {
+            image: '/static/icons/light/circle.svg',
+            value: 1,
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
+          },
+          {
+            image: '/static/icons/light/circle.svg',
+            value: 2,
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
+          },
+          {
+            image: '/static/icons/light/circle.svg',
+            value: 3,
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
+          },
+        ],
+      },
+    },
   ],
 };
