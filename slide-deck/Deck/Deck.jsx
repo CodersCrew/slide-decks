@@ -109,17 +109,17 @@ class Deck extends Component {
 
     return (
       <>
-        <Panel 
+        {this.head}
+        <GlobalStyle templateStyle={this.template.styles} {...this.state.theme} />
+        <Container width={width} height={height} scale={scale}>
+          {this.slides.map(this.renderSlide)}
+          <Panel 
           actualSlide={this.state.slideIndex} 
           slides={this.slidesCount} 
           prevSlide={this.prevSlide}
           nextSlide={this.nextSlide}
           newTheme={this.changeTheme}
-        />
-        {this.head}
-        <GlobalStyle templateStyle={this.template.styles} {...this.state.theme} />
-        <Container width={width} height={height} scale={scale}>
-          {this.slides.map(this.renderSlide)}
+          />
         </Container>
       </>
     );
