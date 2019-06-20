@@ -1,9 +1,10 @@
 import styled from 'styled-components';
+import { number } from 'prop-types';
 
 const Container = styled.div`
     position: absolute;
-    bottom: 0px;
-    height: 40px;
+    top: 0;
+    height: 20px;
     width: 100%;
     z-index: 10;
 `;
@@ -11,27 +12,37 @@ const Container = styled.div`
 const ProgressLine = styled.div`
     background: var(--blue);
     height: 100%;
-    transition: width .2s ease-in;
+    transition: width 400ms ease-in-out;
 `;
 
 export function nextStep({ keyCode }) {
     const { slideIndex } = this.state;
-    if(keyCode === 39){
-    this.setState({ percentage: this.state.percentage + (1/(this.slidesCount - 1))*100 })
+    if(keyCode === 39 && slideIndex !== this.slidesCount - 1){
+    this.setState({ percentage: this.state.percentage + (1/(this.slidesCount-1))*100 });
+    }
+    if(keyCode === 39 && slideIndex === this.slidesCount - 1){
+    this.setState({ percentage: 100 });
     }
   }
 
 export function prevStep({ keyCode }) {
     const { slideIndex } = this.state;
-    if(keyCode === 37){
-    this.setState({ percentage: this.state.percentage - (1/(this.slidesCount - 1))*100 })
+    if(keyCode === 37 && slideIndex !== 0){
+    this.setState({ percentage: this.state.percentage - (1/(this.slidesCount-1))*100 });
     }
+    if(keyCode === 37 && slideIndex === 0){
+    this.setState({ percentage: 0 });
   }
+}
 
 const ProgressBar = ({ percentage }) => (
         <Container className="progress-bar">
             <ProgressLine style={{ width: `${percentage}%` }}/>
         </Container>
     );
+
+ProgressBar.propTypes = {
+    percentage: number,
+};
 
 export default ProgressBar;

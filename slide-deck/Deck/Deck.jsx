@@ -24,7 +24,7 @@ class Deck extends Component {
       slideIndex: Number(router.query.slide) || 0,
       scale: 0,
       animation: null,
-      percentage: Number(router.query.slide)/17*100,
+      percentage: 0,
     };
 
     this.slides = addKeysToSlides(config.slides);
@@ -51,6 +51,7 @@ class Deck extends Component {
     }
 
     this.handleScaleChange({ currentTarget: window });
+    this.setState({ percentage: this.state.slideIndex/(this.slidesCount - 1)*100 });
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -96,8 +97,6 @@ class Deck extends Component {
   render() {
     const { scale, percentage } = this.state;
     const { width, height } = this.template.globals;
-
-    console.log(this.state.slideIndex);
 
     return (
       <>
