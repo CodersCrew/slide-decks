@@ -104,7 +104,7 @@ class Deck extends Component {
   };
 
   render() {
-    const { scale } = this.state;
+    const { scale, slideIndex } = this.state;
     const { width, height } = this.template.globals;
 
     return (
@@ -114,11 +114,12 @@ class Deck extends Component {
         <Container width={width} height={height} scale={scale}>
           {this.slides.map(this.renderSlide)}
           <Panel 
-          actualSlide={this.state.slideIndex} 
-          slides={this.slidesCount} 
-          prevSlide={this.prevSlide}
-          nextSlide={this.nextSlide}
-          newTheme={this.changeTheme}
+            actualSlide={slideIndex} 
+            slides={this.slidesCount} 
+            prevSlide={this.prevSlide}
+            nextSlide={this.nextSlide}
+            theme={this.state.theme.slideBackground}
+            newTheme={this.changeTheme}
           />
         </Container>
       </>
