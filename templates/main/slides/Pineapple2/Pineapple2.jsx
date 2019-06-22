@@ -3,17 +3,32 @@ import { string, number, arrayOf, exact } from 'prop-types';
 import { LineHeader } from '../../components';
 import Item from './Item';
 
-const Container = styled.div``;
-const Items = styled.div``;
+const Container = styled.div`
+    display: flex;
+    flex-direction: row;
+`;
+
+const Left = styled.div`
+    border-right: 8px solid var(--blue);
+`;
+
+const Right = styled.div`
+    padding: 40px 185px 110px 64px;
+`;
 
 const PineApple = ({ title, items }) => (
     <Container>
-        <LineHeader>{title}</LineHeader>
-        <Items>
-            {items.map(item => (
-            <Item key={item.value} {...item} />
-            ))}
-        </Items>
+        <Left>
+            <img src="/static/icons/light/pineapple_2.svg" />
+        </Left>
+        <Right>
+            <LineHeader>{title}</LineHeader>
+            <div className="items">
+                {items.map(item => (
+                <Item key={item.value} {...item} />
+                ))}
+            </div>
+        </Right>
     </Container>
 );
 

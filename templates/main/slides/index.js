@@ -14,7 +14,7 @@ import Code from './Code';
 import CodeSandbox from './CodeSandbox';
 import SocialMedia from './SocialMedia';
 import Funnel from './Funnel';
-import PineApple from './Pineapple2';
+import Pineapple2 from './Pineapple2';
 
 export default {
   Title,
@@ -33,5 +33,5 @@ export default {
   CodeSandbox,
   SocialMedia,
   Funnel,
-  PineApple,
+  Pineapple2,
 };
