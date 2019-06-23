@@ -527,5 +527,31 @@ export default {
         ],
       },
     },
+    {
+      template: 'Pineapple2',
+      animation: {
+        type: 'horizontal',
+      },
+      content: {
+        title: 'Slide title',
+        items: [
+          {
+            value: 1,
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
+          },
+          {
+            value: 2,
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
+          },
+          {
+            value: 3,
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
+          },
+        ],
+      },
+    },
   ],
 };
