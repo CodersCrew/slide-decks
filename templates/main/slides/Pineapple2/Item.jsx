@@ -7,18 +7,25 @@ const Container = styled.div`
     align-items: center;
     margin-bottom: 66px;
     margin-top: 69px;
-    margin-left: -115px;
+    margin-left: -112px;
 `;
-const Wrapper = styled.div`
+const Circle = styled.div`
     position: relative;
-    margin-bottom: 40px; 
-    color: var(--blue);
+    margin-bottom: 50px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 88px;
+    height: 88px;
+    min-width: 88px;
+    min-height: 88px;
+    border-radius: 100%;
+    border: 8px solid var(--primary);
+    background: var(--white);
+    color: var(--primary);
 `;
 
 const Value = styled.div`
-    position: absolute;
-    top: 13px;
-    left: 32px;
     font-size: 48px;
     line-height: 65px;
     font-weight: var(--bold);
@@ -44,12 +51,11 @@ const Underline = styled.div`
     margin-left: -28px;
 `;
 
-const Item = ({ image, value, name, content }) => (
+const Item = ({ value, name, content }) => (
     <Container>
-            <Wrapper>
-                <img src={image} />
+            <Circle>
                 <Value>{value}</Value>
-            </Wrapper>
+            </Circle>
             <Description>
                 <h4>{name}</h4>
                 <Underline>
@@ -61,7 +67,6 @@ const Item = ({ image, value, name, content }) => (
 );
 
 Item.propTypes = {
-    image: string,
     value: number,
     name: string,
     content: string,

@@ -9,7 +9,7 @@ const Container = styled.div`
 `;
 
 const Left = styled.div`
-    border-right: 8px solid var(--blue);
+    border-right: 8px solid var(--primary);
 `;
 
 const Right = styled.div`
@@ -36,7 +36,6 @@ PineApple.propTypes = {
     title: string,
     items: arrayOf(
         exact({
-            image: string,
             value: number,
             name: string,
             content: string,
