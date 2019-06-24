@@ -6,7 +6,7 @@ import Slide from '../Slide';
 import { nextSlide, prevSlide, handleArrowPress } from './slides-methods';
 import { renderHead } from './renderers';
 import { ProgressBar } from '../../templates/main/components';
-import { nextStep, prevStep } from '../../templates/main/components/ProgressBar';
+import { moveProgressBar } from '../../templates/main/components/ProgressBar';
 import { updateURL, checkForStateChange, checkForNewAnimation, addKeysToSlides, getScale } from './utils';
 import { Container } from './styles';
 
@@ -36,15 +36,13 @@ class Deck extends Component {
     this.prevSlide = prevSlide.bind(this);
     this.handleArrowPress = handleArrowPress.bind(this);
 
-    this.nextStep = nextStep.bind(this);
-    this.prevStep = prevStep.bind(this);
+    this.moveProgressBar = moveProgressBar.bind(this);
   }
 
   componentDidMount() {
+    window.addEventListener('keydown', this.moveProgressBar);
     window.addEventListener('keydown', this.handleArrowPress);
     window.addEventListener('resize', this.handleScaleChange);
-    window.addEventListener('keydown', this.nextStep);
-    window.addEventListener('keydown', this.prevStep);
 
     if (this.template.scripts.onInit) {
       this.template.scripts.onInit(this);
@@ -61,6 +59,10 @@ class Deck extends Component {
   componentDidUpdate(prevProps, prevState) {
     updateURL(prevState, this.state, this.props.router);
     checkForNewAnimation(prevState, this.state, () => this.setState({ animation: null }));
+
+    if(this.state.slideIndex === 0){
+      this.setState({ percentage: 0})
+    }
   }
 
   componentWillUnmount() {
