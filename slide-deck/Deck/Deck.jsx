@@ -5,6 +5,8 @@ import GlobalStyle from '../GlobalStyle';
 import Slide from '../Slide';
 import { nextSlide, prevSlide, handleArrowPress } from './slides-methods';
 import { renderHead } from './renderers';
+import { ProgressBar } from '../../templates/main/components';
+import { moveProgressBar } from '../../templates/main/components/ProgressBar';
 import { updateURL, checkForStateChange, checkForNewAnimation, addKeysToSlides, getScale } from './utils';
 import { Container } from './styles';
 
@@ -22,6 +24,7 @@ class Deck extends Component {
       slideIndex: Number(router.query.slide) || 0,
       scale: 0,
       animation: null,
+      percentage: 0,
     };
 
     this.slides = addKeysToSlides(config.slides);
@@ -32,9 +35,12 @@ class Deck extends Component {
     this.nextSlide = nextSlide.bind(this);
     this.prevSlide = prevSlide.bind(this);
     this.handleArrowPress = handleArrowPress.bind(this);
+
+    this.moveProgressBar = moveProgressBar.bind(this);
   }
 
   componentDidMount() {
+    window.addEventListener('keydown', this.moveProgressBar);
     window.addEventListener('keydown', this.handleArrowPress);
     window.addEventListener('resize', this.handleScaleChange);
 
@@ -43,6 +49,7 @@ class Deck extends Component {
     }
 
     this.handleScaleChange({ currentTarget: window });
+    this.setState({ percentage: this.state.slideIndex/(this.slidesCount - 1)*100 });
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -52,6 +59,10 @@ class Deck extends Component {
   componentDidUpdate(prevProps, prevState) {
     updateURL(prevState, this.state, this.props.router);
     checkForNewAnimation(prevState, this.state, () => this.setState({ animation: null }));
+
+    if(this.state.slideIndex === 0){
+      this.setState({ percentage: 0})
+    }
   }
 
   componentWillUnmount() {
@@ -86,7 +97,7 @@ class Deck extends Component {
   };
 
   render() {
-    const { scale } = this.state;
+    const { scale, percentage } = this.state;
     const { width, height } = this.template.globals;
 
     return (
@@ -95,6 +106,7 @@ class Deck extends Component {
         <GlobalStyle templateStyle={this.template.styles} />
         <Container width={width} height={height} scale={scale}>
           {this.slides.map(this.renderSlide)}
+          <ProgressBar percentage={percentage} />
         </Container>
       </>
     );

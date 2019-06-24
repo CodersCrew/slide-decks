@@ -23,3 +23,4 @@ export function handleArrowPress({ keyCode }) {
     this.nextSlide();
   }
 };
+
