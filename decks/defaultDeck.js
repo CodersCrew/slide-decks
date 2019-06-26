@@ -553,5 +553,25 @@ export default {
         ],
       },
     },
+    {
+      template: 'Pineapple',
+      animation: {
+        type: 'horizontal',
+      },
+      content: {
+        title: 'Slide title',
+        content: 'Vivamus ac risus eget orci mollis sodales. Praesent faucibus accumsan risus. Etiam semper orci id tellus dignissim pretium.',
+        items: [
+          {
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
+          },
+          {
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
+          },
+        ],
+      },
+    },
   ],
 };
