@@ -4,8 +4,11 @@ export function nextSlide() {
   this.setState(state => ({
     slideIndex: state.slideIndex + 1,
     animation: { direction: 'next', type: this.slides.find(({ key }) => key === state.slideIndex).animation.type },
-  }));
-}
+    percentage: this.state.percentage + (1/(this.slidesCount-1))*100,
+  }))}
+  else if(slideIndex === this.slidesCount - 1){
+    this.setState({ percentage: 100 });
+  }
 }
 
 export function prevSlide() {
@@ -17,9 +20,14 @@ export function prevSlide() {
       direction: 'prev',
       type: this.slides.find(({ key }) => key === state.slideIndex - 1).animation.type,
     },
+    percentage: this.state.percentage - (1/(this.slidesCount-1))*100,
   }));
 }
+  else if(slideIndex === 0){
+    this.setState({ percentage: 0 });
+  }
 }
+
 
 export function handleArrowPress({ keyCode }) {
   const { slideIndex } = this.state;
