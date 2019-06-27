@@ -4,3 +4,4 @@ export BoxHeading from './BoxHeading';
 export Icon from './Icon';
 export CircularPercent from './CircularPercent';
 export Panel from './Panel';
+export ProgressBar from './ProgressBar';

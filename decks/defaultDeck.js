@@ -527,5 +527,51 @@ export default {
         ],
       },
     },
+    {
+      template: 'Pineapple2',
+      animation: {
+        type: 'horizontal',
+      },
+      content: {
+        title: 'Slide title',
+        items: [
+          {
+            value: 1,
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
+          },
+          {
+            value: 2,
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
+          },
+          {
+            value: 3,
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
+          },
+        ],
+      },
+    },
+    {
+      template: 'Pineapple',
+      animation: {
+        type: 'horizontal',
+      },
+      content: {
+        title: 'Slide title',
+        content: 'Vivamus ac risus eget orci mollis sodales. Praesent faucibus accumsan risus. Etiam semper orci id tellus dignissim pretium.',
+        items: [
+          {
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
+          },
+          {
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
+          },
+        ],
+      },
+    },
   ],
 };

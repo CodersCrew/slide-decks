@@ -6,6 +6,8 @@ import Slide from '../Slide';
 import { nextSlide, prevSlide, handleArrowPress } from './slides-methods';
 import { renderHead } from './renderers';
 import { Panel } from '../../templates/main/components';
+import { ProgressBar } from '../../templates/main/components';
+import { moveProgressBar } from '../../templates/main/components/ProgressBar';
 import { updateURL, checkForStateChange, checkForNewAnimation, addKeysToSlides, getScale } from './utils';
 import { Container } from './styles';
 
@@ -24,6 +26,7 @@ class Deck extends Component {
       scale: 0,
       animation: null,
       theme: 'light',
+      percentage: 0,
     };
 
     this.slides = addKeysToSlides(config.slides);
@@ -34,6 +37,8 @@ class Deck extends Component {
     this.nextSlide = nextSlide.bind(this);
     this.prevSlide = prevSlide.bind(this);
     this.handleArrowPress = handleArrowPress.bind(this);
+
+    this.moveProgressBar = moveProgressBar.bind(this);
 
     this.toggleTheme = this.toggleTheme.bind(this);
   }
@@ -49,6 +54,7 @@ class Deck extends Component {
       }
 
   componentDidMount() {
+    window.addEventListener('keydown', this.moveProgressBar);
     window.addEventListener('keydown', this.handleArrowPress);
     window.addEventListener('resize', this.handleScaleChange);
 
@@ -57,6 +63,7 @@ class Deck extends Component {
     }
 
     this.handleScaleChange({ currentTarget: window });
+    this.setState({ percentage: this.state.slideIndex/(this.slidesCount - 1)*100 });
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -66,6 +73,10 @@ class Deck extends Component {
   componentDidUpdate(prevProps, prevState) {
     updateURL(prevState, this.state, this.props.router);
     checkForNewAnimation(prevState, this.state, () => this.setState({ animation: null }));
+
+    if(this.state.slideIndex === 0){
+      this.setState({ percentage: 0})
+    }
   }
 
   componentWillUnmount() {
@@ -100,7 +111,7 @@ class Deck extends Component {
   };
 
   render() {
-    const { scale, slideIndex } = this.state;
+    const { scale, slideIndex, percentage } = this.state;
     const { width, height } = this.template.globals;
 
     return (
@@ -116,6 +127,7 @@ class Deck extends Component {
             nextSlide={this.nextSlide}
             newTheme={this.toggleTheme}
           />
+          <ProgressBar percentage={percentage} />
         </Container>
       </>
     );
