@@ -25,15 +25,15 @@ export default css`
     --white: #fff;
 
     --primary: var(--blue);
-    --text-primary: ${props => props.textPrimary? `var(--white)` : `var(--black)`};
-    --text-secondary: ${props => props.textSecondary? `var(--white)` : `var(--grey)`};
-    --text-regular: ${props => props.textRegular? `var(--white)` : `var(--grey-dark)`};
-    --text-placeholder: ${props => props.textPlaceholder? `var(--white)` : `var(--grey-light)`};
+    --text-primary: var(--black);
+    --text-secondary: var(--grey);
+    --text-regular: var(--grey-dark);
+    --text-placeholder: var(--grey-light);
 
     ${'' /* Defaults */}
 
-    --slide-background: ${props => props.slideBackground? `var(--black)` : `var(--white)`};
-    --global-background: ${props => props.globalBackground? `var(--grey-darker)` : `var(--black)`};
+    --slide-background: var(--white);
+    --global-background: var(--black);
 
     ${'' /* Fonts */}
 
@@ -101,4 +101,21 @@ export default css`
     line-height: 1.1;
     color: var(--text-primary);
   }
+
+  html[data-theme="dark"] {
+    --text-primary: var(--white);
+    --text-secondary: var(--white);
+    --text-regular:  var(--white);
+    --text-placeholder:  var(--white);
+    --slide-background: var(--black);
+    --global-background: var(--grey-darker);
+}
+
+    html.theme-transition,
+    html.theme-transition *,
+    html.theme-transition *:before,
+    html.theme-transition *:after {
+      transition: background 750ms !important;
+      transition-delay: 0 !important;
+    }
 `;

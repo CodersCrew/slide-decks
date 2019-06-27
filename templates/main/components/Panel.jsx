@@ -3,17 +3,14 @@ import styled from 'styled-components';
 const Container = styled.div`
     position: absolute;
     bottom: 0;
-    padding: 0px 34px 28px 0px;
+    padding: 0px 34px 10px 0px;
     width: 100%;
     z-index: 10;
    
     p {
-        color: var(--white);
+        color: var(--blue);
         font-size: 25px;
-
-        &.dark{
-            color: var(--dark-grey);
-        }
+        font-weight: var(--bold);
     }
 `;
 
@@ -21,30 +18,39 @@ const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: flex-end;
+    justify-content: flex-end; 
+    
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
 `;
 
 const SlideNumber = styled.div`
-    margin-left: 45px;
-    margin-right: 45px;
+    margin-left: 40px;
+    margin-right: 40px;
+    width: 80px;
+    text-align: center;
 `;
 
 const Arrows = styled.div`
     display: flex;
     margin-left: 59px;
+    cursor: pointer;
 `;
 
-const Panel = ({ actualSlide, slides, prevSlide, nextSlide, theme, newTheme }) => {
+const Panel = ({ actualSlide, slides, prevSlide, nextSlide, newTheme }) => {
     return (
     <Container className="container">
         <Wrapper className="wrapper">
-            <div className="theme-btn" onClick={newTheme}><img src={theme ? "/static/icons/light/light_theme_btn.svg" : "/static/icons/light/dark_theme_btn.svg"} /></div>
+            <button onClick={newTheme}><img src="/static/icons/light/theme_btn.svg"/></button>
             <Arrows className="arrows">
-                <div onClick={prevSlide}><img src={theme ? "/static/icons/light/light_left_arrow.svg" : "/static/icons/light/dark_left_arrow.svg"}/></div>
+                <button onClick={prevSlide}><img src="/static/icons/light/left_arrow.svg"/></button>
                 <SlideNumber className="slide-number">
-                    <p className={theme ? null : 'dark'}> {actualSlide}|{slides - 1} </p>
+                    <p> {actualSlide + 1}|{slides} </p>
                 </SlideNumber>
-                <div onClick={nextSlide}><img src={theme ? "/static/icons/light/light_right_arrow.svg" : "/static/icons/light/dark_right_arrow.svg"}/></div>
+                <button onClick={nextSlide}><img src="/static/icons/light/right_arrow.svg"/></button>
             </Arrows>
         </Wrapper>
     </Container>

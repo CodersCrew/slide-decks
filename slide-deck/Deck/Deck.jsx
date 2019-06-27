@@ -23,14 +23,7 @@ class Deck extends Component {
       slideIndex: Number(router.query.slide) || 0,
       scale: 0,
       animation: null,
-      theme: {
-        slideBackground: false,
-        globalBackground: false,
-        textPrimary: false,
-        textSecondary: false,
-        textRegular: false,
-        textPlaceholder: false
-      }
+      theme: 'light',
     };
 
     this.slides = addKeysToSlides(config.slides);
@@ -41,16 +34,19 @@ class Deck extends Component {
     this.nextSlide = nextSlide.bind(this);
     this.prevSlide = prevSlide.bind(this);
     this.handleArrowPress = handleArrowPress.bind(this);
+
+    this.toggleTheme = this.toggleTheme.bind(this);
   }
 
-  changeTheme = () => {
-    if(this.state.theme.slideBackground === false){
-      this.setState({ theme: { slideBackground: true, globalBackground: true, textPrimary: true, textSecondary: true, textRegular: true, textPlaceholder: true }});
-    }
-    else if(this.state.theme.slideBackground === true){
-      this.setState({ theme: { slideBackground: false, globalBackground: false, textPrimary: false, textSecondary: false, textRegular: false, textPlaceholder: false }});
-    }
-  }
+  toggleTheme() {
+    const theme = this.state.theme === 'dark' ? 'light' : 'dark';
+    this.setState({ theme });
+    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.classList.add('theme-transition')
+    window.setTimeout(function() {
+      document.documentElement.classList.remove('theme-transition')
+    }, 1000)
+      }
 
   componentDidMount() {
     window.addEventListener('keydown', this.handleArrowPress);
@@ -110,7 +106,7 @@ class Deck extends Component {
     return (
       <>
         {this.head}
-        <GlobalStyle templateStyle={this.template.styles} {...this.state.theme} />
+        <GlobalStyle templateStyle={this.template.styles} />
         <Container width={width} height={height} scale={scale}>
           {this.slides.map(this.renderSlide)}
           <Panel 
@@ -118,8 +114,7 @@ class Deck extends Component {
             slides={this.slidesCount} 
             prevSlide={this.prevSlide}
             nextSlide={this.nextSlide}
-            theme={this.state.theme.slideBackground}
-            newTheme={this.changeTheme}
+            newTheme={this.toggleTheme}
           />
         </Container>
       </>
