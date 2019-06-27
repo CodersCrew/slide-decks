@@ -3,9 +3,11 @@ import styled from 'styled-components';
 const Container = styled.div`
     position: absolute;
     bottom: 0;
-    padding: 0px 34px 10px 0px;
+    padding: 0 30px 10px 0;
     width: 100%;
     z-index: 10;
+    display: flex;
+    justify-content: flex-end;
    
     p {
         color: var(--blue);
@@ -17,12 +19,17 @@ const Container = styled.div`
 const Wrapper = styled.div`
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: flex-end; 
+    align-items: center; 
+    justify-content: center;
+    width: 400px;
+    background-color: rgb(184, 184, 184, 0.5);
+    border-radius: 10px;
+    padding: 10px 10px 0 10px;
     
     button {
         background: none;
         border: none;
+        outline: none;
         cursor: pointer;
     }
 `;
@@ -37,7 +44,6 @@ const SlideNumber = styled.div`
 const Arrows = styled.div`
     display: flex;
     margin-left: 59px;
-    cursor: pointer;
 `;
 
 const Panel = ({ actualSlide, slides, prevSlide, nextSlide, newTheme }) => {

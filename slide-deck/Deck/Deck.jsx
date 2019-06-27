@@ -7,7 +7,6 @@ import { nextSlide, prevSlide, handleArrowPress } from './slides-methods';
 import { renderHead } from './renderers';
 import { Panel } from '../../templates/main/components';
 import { ProgressBar } from '../../templates/main/components';
-import { moveProgressBar } from '../../templates/main/components/ProgressBar';
 import { updateURL, checkForStateChange, checkForNewAnimation, addKeysToSlides, getScale } from './utils';
 import { Container } from './styles';
 
@@ -37,8 +36,6 @@ class Deck extends Component {
     this.nextSlide = nextSlide.bind(this);
     this.prevSlide = prevSlide.bind(this);
     this.handleArrowPress = handleArrowPress.bind(this);
-
-    this.moveProgressBar = moveProgressBar.bind(this);
 
     this.toggleTheme = this.toggleTheme.bind(this);
   }
