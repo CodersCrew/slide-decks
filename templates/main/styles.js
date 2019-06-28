@@ -101,4 +101,21 @@ export default css`
     line-height: 1.1;
     color: var(--text-primary);
   }
+
+  html[data-theme="dark"] {
+    --text-primary: var(--white);
+    --text-secondary: var(--white);
+    --text-regular:  var(--white);
+    --text-placeholder:  var(--white);
+    --slide-background: var(--black);
+    --global-background: var(--grey-darker);
+}
+
+    html.theme-transition,
+    html.theme-transition *,
+    html.theme-transition *:before,
+    html.theme-transition *:after {
+      transition: background 750ms !important;
+      transition-delay: 0 !important;
+    }
 `;

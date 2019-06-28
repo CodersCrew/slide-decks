@@ -11,7 +11,6 @@ const Container = styled.div`
     justify-content: flex-start;
     align-items: center;
     flex: 1;
-    color: var(--grey-dark);
   }
 
   &:last-child {
