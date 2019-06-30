@@ -12,7 +12,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  animation-duration: 1000ms;
+  animation: ease-out 2000ms;  
   background-color: var(--slide-background);
 
   > div {

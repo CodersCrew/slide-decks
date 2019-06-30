@@ -13,7 +13,7 @@ export const checkForStateChange = (currState, nextState) => {
 
 export const checkForNewAnimation = (prevState, currState, callback) => {
   if (!prevState.animaiton && currState.animation) {
-    window.setTimeout(callback, 1200);
+    window.setTimeout(callback, 2000);
   }
 };
 
