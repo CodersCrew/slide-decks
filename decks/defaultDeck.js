@@ -329,6 +329,26 @@ export default {
       },
     },
     {
+      template: 'Pineapple',
+      animation: {
+        type: 'horizontal',
+      },
+      content: {
+        title: 'Slide title',
+        content: 'Vivamus ac risus eget orci mollis sodales. Praesent faucibus accumsan risus. Etiam semper orci id tellus dignissim pretium.',
+        items: [
+          {
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
+          },
+          {
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
+          },
+        ],
+      },
+    },
+    {
       template: 'Projects',
       animation: {
         type: 'horizontal',
@@ -385,6 +405,32 @@ export default {
           },
           {
             image: 'https://kubernetes.io/images/kubernetes-horizontal-color.png',
+          },
+        ],
+      },
+    },
+    {
+      template: 'Pineapple2',
+      animation: {
+        type: 'horizontal',
+      },
+      content: {
+        title: 'Slide title',
+        items: [
+          {
+            value: 1,
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
+          },
+          {
+            value: 2,
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
+          },
+          {
+            value: 3,
+            name: 'Event name',
+            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
           },
         ],
       },
@@ -466,19 +512,19 @@ export default {
       content: {
         items: [
           {
-            image: '/static/icons/light/social_media_one.svg',
+            image: '/static/icons/light/social_media_one.png',
             line: '/static/icons/light/top_line.svg',
             title: 'Item name',
             content: 'Vivamus ac risus eget orci mollis sodales. Etiam semper orci id tellus dignissim pretium.',
           },
           {
-            image: '/static/icons/light/social_media_two.svg',
+            image: '/static/icons/light/social_media_two.png',
             line: '/static/icons/light/medium_line.svg',
             title: 'Item 2',
             content: 'Vivamus ac risus eget orci mollis sodales. Etiam semper orci id tellus dignissim pretium.',
           },
           {
-            image: '/static/icons/light/social_media_three.svg',
+            image: '/static/icons/light/social_media_three.png',
             line: '/static/icons/light/bottom_line.svg',
             title: 'Item 3',
             content: 'Vivamus ac risus eget orci mollis sodales. Etiam semper orci id tellus dignissim pretium.',
@@ -523,52 +569,6 @@ export default {
             image: '/static/icons/light/funnel_piece_six.svg',
             name: 'Item name 6',
             content: 'Vivamus ac risus eget orci mollis sodales.',
-          },
-        ],
-      },
-    },
-    {
-      template: 'Pineapple2',
-      animation: {
-        type: 'horizontal',
-      },
-      content: {
-        title: 'Slide title',
-        items: [
-          {
-            value: 1,
-            name: 'Event name',
-            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
-          },
-          {
-            value: 2,
-            name: 'Event name',
-            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
-          },
-          {
-            value: 3,
-            name: 'Event name',
-            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
-          },
-        ],
-      },
-    },
-    {
-      template: 'Pineapple',
-      animation: {
-        type: 'horizontal',
-      },
-      content: {
-        title: 'Slide title',
-        content: 'Vivamus ac risus eget orci mollis sodales. Praesent faucibus accumsan risus. Etiam semper orci id tellus dignissim pretium.',
-        items: [
-          {
-            name: 'Event name',
-            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
-          },
-          {
-            name: 'Event name',
-            content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
           },
         ],
       },

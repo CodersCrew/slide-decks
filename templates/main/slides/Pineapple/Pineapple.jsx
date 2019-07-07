@@ -60,7 +60,7 @@ const Items = styled.div`
 const Pineapple = ({ title, content, items }) => (
     <Container>
         <Left>
-            <img src="/static/icons/light/pineapple.svg" />
+            <img src="/static/icons/light/pineapple.png" />
             <Line>
                 <p> 2018 </p>
             </Line>
