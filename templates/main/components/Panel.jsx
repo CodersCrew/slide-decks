@@ -14,11 +14,6 @@ const Container = styled.div`
         color: var(--blue);
         font-size: 25px;
         font-weight: var(--bold);
-        display: none;
-
-        &.show {
-            display: block;
-        }
     }
 `;
 
@@ -27,25 +22,19 @@ const Wrapper = styled.div`
     flex-direction: row;
     align-items: center; 
     justify-content: center;
-    background: none;
+    background-color: rgb(184, 184, 184, 0.5);
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     margin-right: 2px;
-    max-width: 0px;
-    transition: all 1500ms ease;
     padding: 8px 5px 0 3px;
+    transition: opacity 1500ms;
+    opacity: 0;
     
     &.show {
-        max-width: 400px;
-        background-color: rgb(184, 184, 184, 0.5);
-
-        button {
-            opacity: 1;
-        }
+        opacity: 1;
     }
 
     button {
-        opacity: 0;
         background: none;
         border: none;
         outline: none;
@@ -68,7 +57,7 @@ const Arrows = styled.div`
 
 const ShowIcon = styled.button`
     background-color: rgb(184, 184, 184, 0.5);
-    padding: 10px 10px 5px 10px;
+    padding: 10px;
     display: flex;
     flex-direction: row;
     align-items: center; 
@@ -78,6 +67,15 @@ const ShowIcon = styled.button`
     cursor: pointer;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+
+    img {
+        transform: rotate(0deg);
+        transition: transform 700ms;
+
+        &.show{
+            transform: rotate(-180deg);
+        }
+    }
 `;
 
 
@@ -104,12 +102,12 @@ class Panel extends Component {
                 <Arrows className="arrows">
                     <button onClick={prevSlide}><img src="/static/icons/light/left_arrow.svg"/></button>
                     <SlideNumber className="slide-number">
-                        <p className={ this.state.isMinimized ? "show" : null }> {actualSlide + 1}|{slides} </p>
+                        <p> {actualSlide + 1}|{slides} </p>
                     </SlideNumber>
                     <button onClick={nextSlide}><img src="/static/icons/light/right_arrow.svg"/></button>
                 </Arrows>
             </Wrapper>
-            <ShowIcon onClick={this.toggleToolbar}><img src="/static/icons/light/plus_icon.svg"/></ShowIcon>
+            <ShowIcon onClick={this.toggleToolbar}><img  className={ this.state.isMinimized ? "show" : null } src="/static/icons/light/small_arrow_up.svg"/></ShowIcon>
         </Container>
         );
     };
