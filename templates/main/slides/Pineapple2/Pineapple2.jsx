@@ -19,7 +19,7 @@ const Right = styled.div`
 const PineApple = ({ title, items }) => (
     <Container>
         <Left>
-            <img src="/static/icons/light/pineapple_2.svg" />
+            <img src="/static/icons/light/pineapple_2.png" />
         </Left>
         <Right>
             <LineHeader>{title}</LineHeader>
