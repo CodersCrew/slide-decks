@@ -103,7 +103,14 @@ class Panel extends Component {
         }
     }
 
-    toggleToolbar = () => {
+    componentDidMount() {
+        window.addEventListener('click', () => {
+            this.setState({ isMinimized: false });
+        })
+    }
+
+    toggleToolbar = e => {
+        e.stopPropagation();
         const checkTo = !this.state.isMinimized;
         this.setState({ isMinimized: checkTo });
     }
@@ -112,7 +119,7 @@ class Panel extends Component {
         const { actualSlide, slides, prevSlide, nextSlide, newTheme } = this.props;
         return (
         <Container>
-            <Wrapper className={ this.state.isMinimized ? "show" : null }>
+            <Wrapper onClick = {e => e.stopPropagation()} className={ this.state.isMinimized ? "show" : null }>
                 <Arrows className="arrows">
                     <LeftArrow onClick={prevSlide}><img src="/static/icons/light/small_arrow_up.svg"/></LeftArrow>
                     <SlideNumber className="slide-number">
