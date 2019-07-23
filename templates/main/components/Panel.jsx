@@ -27,11 +27,13 @@ const Wrapper = styled.div`
     border-radius: 8px;
     margin-bottom: 4px;
     padding: 3px 5px 2px 7px;
-    transition: opacity 1500ms;
+    transition: all 1500ms;
     opacity: 0;
+    margin-right: -400px;
     
     &.show {
         opacity: 1;
+        margin-right: 0;
     }
 
     button {
