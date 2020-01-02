@@ -1,4 +1,3 @@
-import { Component } from 'react';
 import { exact, oneOf, string, number, objectOf, bool, object, func } from 'prop-types';
 import styled from 'styled-components';
 import classnames from 'classnames';
@@ -12,7 +11,7 @@ const Container = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: ease-out 2000ms;  
+  animation: ease-out 2000ms;
   background-color: var(--slide-background);
 
   > div {

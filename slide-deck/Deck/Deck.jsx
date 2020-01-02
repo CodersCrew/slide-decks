@@ -5,16 +5,13 @@ import GlobalStyle from '../GlobalStyle';
 import Slide from '../Slide';
 import { nextSlide, prevSlide, handleArrowPress } from './slides-methods';
 import { renderHead } from './renderers';
-import { Panel } from '../../templates/main/components';
-import { ProgressBar } from '../../templates/main/components';
+import { Panel, ProgressBar } from '../../templates/main/components';
+
 import { updateURL, checkForStateChange, checkForNewAnimation, addKeysToSlides, getScale } from './utils';
 import { Container } from './styles';
 
-import '../../style/main.scss';
-
 const types = ['prev', 'curr', 'next'];
 
-@withRouter
 class Deck extends Component {
   constructor(props) {
     super(props);
@@ -44,11 +41,11 @@ class Deck extends Component {
     const theme = this.state.theme === 'dark' ? 'light' : 'dark';
     this.setState({ theme });
     document.documentElement.setAttribute('data-theme', theme);
-    document.documentElement.classList.add('theme-transition')
+    document.documentElement.classList.add('theme-transition');
     window.setTimeout(function() {
-      document.documentElement.classList.remove('theme-transition')
-    }, 1000)
-      }
+      document.documentElement.classList.remove('theme-transition');
+    }, 1000);
+  }
 
   componentDidMount() {
     window.addEventListener('keydown', this.moveProgressBar);
@@ -60,7 +57,7 @@ class Deck extends Component {
     }
 
     this.handleScaleChange({ currentTarget: window });
-    this.setState({ percentage: this.state.slideIndex/(this.slidesCount - 1)*100 });
+    this.setState({ percentage: (this.state.slideIndex / (this.slidesCount - 1)) * 100 });
   }
 
   shouldComponentUpdate(nextProps, nextState) {
@@ -71,8 +68,8 @@ class Deck extends Component {
     updateURL(prevState, this.state, this.props.router);
     checkForNewAnimation(prevState, this.state, () => this.setState({ animation: null }));
 
-    if(this.state.slideIndex === 0){
-      this.setState({ percentage: 0})
+    if (this.state.slideIndex === 0) {
+      this.setState({ percentage: 0 });
     }
   }
 
@@ -117,9 +114,9 @@ class Deck extends Component {
         <GlobalStyle templateStyle={this.template.styles} />
         <Container width={width} height={height} scale={scale}>
           {this.slides.map(this.renderSlide)}
-          <Panel 
-            actualSlide={slideIndex} 
-            slides={this.slidesCount} 
+          <Panel
+            actualSlide={slideIndex}
+            slides={this.slidesCount}
             prevSlide={this.prevSlide}
             nextSlide={this.nextSlide}
             newTheme={this.toggleTheme}
@@ -162,4 +159,4 @@ Deck.propTypes = {
   }),
 };
 
-export default Deck;
+export default withRouter(Deck);

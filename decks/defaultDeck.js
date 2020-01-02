@@ -26,7 +26,7 @@ export default {
         type: 'horizontal',
       },
       content: {
-        image: '/static/react.png',
+        image: '/react.png',
         title: 'Presentation title',
         subtitle: 'Some longer presentation subtitle',
       },
@@ -72,32 +72,32 @@ export default {
           'Maecenas vulputate ac elit vel blandit. Morbi vulputate elit purus, vitae mattis urna tristique quis. Morbi ac cursus justo.',
         items: [
           {
-            icon: '/static/icons/light/calendar-alt.svg',
+            icon: '/icons/light/calendar-alt.svg',
             title: 'Service name',
             content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
           },
           {
-            icon: '/static/icons/light/comments.svg',
+            icon: '/icons/light/comments.svg',
             title: 'Service name',
             content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
           },
           {
-            icon: '/static/icons/light/gem.svg',
+            icon: '/icons/light/gem.svg',
             title: 'Service name',
             content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
           },
           {
-            icon: '/static/icons/light/hourglass-half.svg',
+            icon: '/icons/light/hourglass-half.svg',
             title: 'Service name',
             content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
           },
           {
-            icon: '/static/icons/light/paper-plane.svg',
+            icon: '/icons/light/paper-plane.svg',
             title: 'Service name',
             content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
           },
           {
-            icon: '/static/icons/light/star.svg',
+            icon: '/icons/light/star.svg',
             title: 'Service name',
             content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
           },
@@ -115,32 +115,32 @@ export default {
           'Maecenas vulputate ac elit vel blandit. Morbi vulputate elit purus, vitae mattis urna tristique quis. Morbi ac cursus justo.',
         items: [
           {
-            icon: '/static/icons/light/calendar-alt.svg',
+            icon: '/icons/light/calendar-alt.svg',
             title: 'Service name',
             content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
           },
           {
-            icon: '/static/icons/light/comments.svg',
+            icon: '/icons/light/comments.svg',
             title: 'Service name',
             content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
           },
           {
-            icon: '/static/icons/light/gem.svg',
+            icon: '/icons/light/gem.svg',
             title: 'Service name',
             content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
           },
           {
-            icon: '/static/icons/light/hourglass-half.svg',
+            icon: '/icons/light/hourglass-half.svg',
             title: 'Service name',
             content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
           },
           {
-            icon: '/static/icons/light/paper-plane.svg',
+            icon: '/icons/light/paper-plane.svg',
             title: 'Service name',
             content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
           },
           {
-            icon: '/static/icons/light/star.svg',
+            icon: '/icons/light/star.svg',
             title: 'Service name',
             content: 'Pellentesque sollicitudin leo leo, vitae dapibus nisi convallis at.',
           },
@@ -335,7 +335,8 @@ export default {
       },
       content: {
         title: 'Slide title',
-        content: 'Vivamus ac risus eget orci mollis sodales. Praesent faucibus accumsan risus. Etiam semper orci id tellus dignissim pretium.',
+        content:
+          'Vivamus ac risus eget orci mollis sodales. Praesent faucibus accumsan risus. Etiam semper orci id tellus dignissim pretium.',
         items: [
           {
             name: 'Event name',
@@ -398,7 +399,7 @@ export default {
           },
           {
             image:
-              'https://static1.squarespace.com/static/567069c3d82d5e5d015ccbac/56bc080545bf21e4826b890c/5b0eaf48f950b73551e8f753/1527689039587/amazon+logo.png',
+              'https:/1.squarespace.com/567069c3d82d5e5d015ccbac/56bc080545bf21e4826b890c/5b0eaf48f950b73551e8f753/1527689039587/amazon+logo.png',
           },
           {
             image: 'https://us.coca-cola.com/content/dam/coke2016/walgreens-fall-football/Coca-Cola-logo.png',
@@ -443,7 +444,7 @@ export default {
       content: {
         title: 'Slide title',
         subtitle: 'Slide subtitle',
-        icon: '/static/icons/light/gem.svg',
+        icon: '/icons/light/gem.svg',
         image: 'https://images.unsplash.com/photo-1553109231-0bd785712347?w=1350&q=80',
         content: `
         Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.
@@ -512,20 +513,20 @@ export default {
       content: {
         items: [
           {
-            image: '/static/icons/light/social_media_one.png',
-            line: '/static/icons/light/top_line.svg',
+            image: '/icons/light/social_media_one.png',
+            line: '/icons/light/top_line.svg',
             title: 'Item name',
             content: 'Vivamus ac risus eget orci mollis sodales. Etiam semper orci id tellus dignissim pretium.',
           },
           {
-            image: '/static/icons/light/social_media_two.png',
-            line: '/static/icons/light/medium_line.svg',
+            image: '/icons/light/social_media_two.png',
+            line: '/icons/light/medium_line.svg',
             title: 'Item 2',
             content: 'Vivamus ac risus eget orci mollis sodales. Etiam semper orci id tellus dignissim pretium.',
           },
           {
-            image: '/static/icons/light/social_media_three.png',
-            line: '/static/icons/light/bottom_line.svg',
+            image: '/icons/light/social_media_three.png',
+            line: '/icons/light/bottom_line.svg',
             title: 'Item 3',
             content: 'Vivamus ac risus eget orci mollis sodales. Etiam semper orci id tellus dignissim pretium.',
           },
@@ -541,32 +542,32 @@ export default {
         title: 'Slide title',
         items: [
           {
-            image: '/static/icons/light/funnel_piece_one.svg',
+            image: '/icons/light/funnel_piece_one.svg',
             name: 'Item name 1',
             content: 'Vivamus ac risus eget orci mollis sodales.',
           },
           {
-            image: '/static/icons/light/funnel_piece_two.svg',
+            image: '/icons/light/funnel_piece_two.svg',
             name: 'Item name 2',
             content: 'Vivamus ac risus eget orci mollis sodales.',
           },
           {
-            image: '/static/icons/light/funnel_piece_three.svg',
+            image: '/icons/light/funnel_piece_three.svg',
             name: 'Item name 3',
             content: 'Vivamus ac risus eget orci mollis sodales.',
           },
           {
-            image: '/static/icons/light/funnel_piece_four.svg',
+            image: '/icons/light/funnel_piece_four.svg',
             name: 'Item name 4',
             content: 'Vivamus ac risus eget orci mollis sodales.',
           },
           {
-            image: '/static/icons/light/funnel_piece_five.svg',
+            image: '/icons/light/funnel_piece_five.svg',
             name: 'Item name 5',
             content: 'Vivamus ac risus eget orci mollis sodales.',
           },
           {
-            image: '/static/icons/light/funnel_piece_six.svg',
+            image: '/icons/light/funnel_piece_six.svg',
             name: 'Item name 6',
             content: 'Vivamus ac risus eget orci mollis sodales.',
           },

@@ -12,7 +12,7 @@ coverage
 *.log
 
 # npm & yarn
-node_modules/
+node_modules
 .npm
 .yarn-integrity
 npm-debug.log*
@@ -29,4 +29,5 @@ package-lock.json
 packages/api/etc/
 
 # Next
-.next/*
+.next
+docs

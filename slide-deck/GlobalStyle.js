@@ -1,4 +1,76 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, keyframes } from 'styled-components';
+
+const enterLeft = keyframes`
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`;
+
+const enterRight = keyframes`
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+`;
+
+const leaveLeft = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+`;
+
+const leaveRight = keyframes`
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+`;
+
+const enterTop = keyframes`
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`;
+
+const enterBottom = keyframes`
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`;
+
+const leaveTop = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+`;
+
+const leaveBottom = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+`;
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -145,6 +217,71 @@ const GlobalStyle = createGlobalStyle`
     align-items: center;
     justify-content: center;
     overflow: hidden;
+  }
+
+  .slide-prev {
+    z-index: 0;
+    opacity: 0;
+  }
+
+  .slide-curr {
+    z-index: 1;
+    opacity: 1;
+  }
+
+  .slide-next {
+    z-index: 0;
+    opacity: 0;
+  }
+
+  .animated {
+    &.animation-horizontal {
+      &.direction-next {
+        &.slide-prev {
+          animation-name: ${leaveLeft};
+          opacity: 1;
+        }
+
+        &.slide-curr {
+          animation-name: ${enterRight};
+        }
+      }
+
+      &.direction-prev {
+        &.slide-curr {
+          animation-name: ${enterLeft};
+        }
+
+        &.slide-next {
+          animation-name: ${leaveRight};
+          opacity: 1;
+        }
+      }
+    }
+
+    &.animation-vertical {
+      &.direction-next {
+        &.slide-prev {
+          animation-name: ${leaveTop};
+          opacity: 1;
+        }
+
+        &.slide-curr {
+          animation-name: ${enterBottom};
+        }
+      }
+
+      &.direction-prev {
+        &.slide-curr {
+          animation-name: ${enterTop};
+        }
+
+        &.slide-next {
+          animation-name: ${leaveBottom};
+          opacity: 1;
+        }
+      }
+    }
   }
 
   ${props => props.templateStyle}

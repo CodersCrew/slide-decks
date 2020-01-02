@@ -123,15 +123,15 @@ class Panel extends Component {
         <Container>
             <Wrapper onClick = {e => e.stopPropagation()} className={ this.state.isMinimized ? "show" : null }>
                 <Arrows className="arrows">
-                    <LeftArrow onClick={prevSlide}><img src="/static/icons/light/small_arrow_up.svg"/></LeftArrow>
+                    <LeftArrow onClick={prevSlide}><img src="/icons/light/small_arrow_up.svg"/></LeftArrow>
                     <SlideNumber className="slide-number">
                         <p> {actualSlide + 1}|{slides} </p>
                     </SlideNumber>
-                    <RightArrow onClick={nextSlide}><img src="/static/icons/light/small_arrow_up.svg"/></RightArrow>
+                    <RightArrow onClick={nextSlide}><img src="/icons/light/small_arrow_up.svg"/></RightArrow>
                 </Arrows>
-                <button onClick={newTheme}><img src="/static/icons/light/theme_btn.svg"/></button>
+                <button onClick={newTheme}><img src="/icons/light/theme_btn.svg"/></button>
             </Wrapper>
-            <ShowIcon onClick={this.toggleToolbar}><img  className={ this.state.isMinimized ? "show" : null } src="/static/icons/light/small_arrow_up.svg"/></ShowIcon>
+            <ShowIcon onClick={this.toggleToolbar}><img  className={ this.state.isMinimized ? "show" : null } src="/icons/light/small_arrow_up.svg"/></ShowIcon>
         </Container>
         );
     };
