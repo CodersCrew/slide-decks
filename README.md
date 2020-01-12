@@ -3,6 +3,7 @@
 ## Overview
 
 This application allows you to create awesome slides with code.
+[Link](https://slide-decks.slidedecks.now.sh/)
 
 ### Configuration
 
